@@ -284,7 +284,7 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  transition: transform var(--anim-fast) opacity var(--anim-fast);
+  transition: transform var(--anim-fast), opacity var(--anim-fast);
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) rotate(360deg) scale(0.2);
@@ -302,12 +302,23 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  transition: background-color var(--anim-fast), color var(--anim-fast);
 }
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
+.modal-icon {
+  fill: currentColor;
+}
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--ocean-text-cl);
+  color: var(--white-text-cl);
+}
+
 /* Main */
 /* Features section 1 */
 
