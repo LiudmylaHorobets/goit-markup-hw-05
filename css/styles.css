@@ -33,7 +33,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 .link {
   text-decoration: none;
 }
@@ -161,8 +160,7 @@ body {
   padding-bottom: 24px;
   display: block;
 
-  transition: color var(--anim-fast), background-color var(--anim-fast),
-    box-shadow var(--anim-fast);
+  transition: color var(--anim-fast);
 }
 .header-contact-item {
   margin-left: 40px;
@@ -173,7 +171,6 @@ body {
 .footer {
   background-color: var(--navy-blue-text-cl);
 }
-
 .hero {
   max-width: 1440px;
   margin-left: auto;
@@ -213,11 +210,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-  border: none;
   border-radius: 4px;
-
-  transition: color var(--anim-fast), background-color var(--anim-fast),
-    box-shadow var(--anim-fast);
 }
 .btn-dark {
   color: var(--white-text-cl);
@@ -229,6 +222,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   display: block;
   margin: auto;
+
+  transition: background-color var(--anim-fast);
 }
 .btn-light {
   color: var(--iris-text-cl);
@@ -236,21 +231,25 @@ body {
   min-height: 48px;
   padding: 12px 24px;
   border: 1px solid var(--cornflower-text-cl);
+
+  transition: color var(--anim-fast), background-color var(--anim-fast),
+    border var(--anim-fast), box-shadow var(--anim-fast);
 }
 
 /* Active state */
-.btn:hover,
-.btn:focus {
-  color: var(--white-text-cl);
+.btn-dark:hover,
+.btn-dark:focus {
   background-color: var(--ocean-text-cl);
 }
-
-.portfolio-btn:hover,
-.portfolio-btn:focus {
+.btn-light:hover,
+.btn-light:focus {
+  color: var(--white-text-cl);
+  background-color: var(--ocean-text-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border: none;
+  border: 1px solid var(--ocean-text-cl);
 }
+
 /* Modal window */
 .backdrop {
   position: fixed;
@@ -262,6 +261,7 @@ body {
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
 
+  /* ми змінюємо цей код */
   /* opacity: 1;
   visibility: visible;
   pointer-events: initial; */
@@ -292,9 +292,11 @@ body {
 }
 .modal-btn {
   display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
 
-  display: block;
   width: 24px;
   height: 24px;
 
@@ -325,7 +327,6 @@ body {
 .features {
   padding: 120px 0;
 }
-
 .features-list {
   display: flex;
   gap: 24px;
@@ -355,13 +356,11 @@ body {
 .page-about {
   padding-bottom: 120px;
 }
-
 .about-title,
 .team-title {
   min-height: 40px;
   margin-bottom: 72px;
 }
-
 .about-list,
 .team-list {
   display: flex;
@@ -376,7 +375,6 @@ body {
   letter-spacing: 0.02em;
   color: var(--slate-text-cl);
 }
-
 .header-three {
   font-weight: 500;
   font-size: 20px;
@@ -407,7 +405,6 @@ body {
   background-color: var(--cloud-text-cl);
   padding: 120px 0;
 }
-
 .container-cards {
   padding: 32px 0;
   text-align: center;
@@ -522,7 +519,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-
 .footer-socials-list {
   display: flex;
   gap: 16px;
@@ -590,6 +586,10 @@ body {
   position: relative;
   overflow: hidden;
 }
+.portfolio-cards-item-link:hover .overlay,
+.portfolio-cards-item-link:focus .overlay {
+  transform: translateY(0);
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -610,15 +610,11 @@ body {
   letter-spacing: 0.02em;
   color: var(--cloud-text-cl);
 }
-.portfolio-cards-box:hover .overlay {
-  transform: translateY(0);
-}
 .portfolio-cards-item {
   width: calc((100% - (24px * 2)) / 3);
 
   transition: box-shadow var(--anim-fast);
 }
-
 .portfolio-cards-item-link:hover,
 .portfolio-cards-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
